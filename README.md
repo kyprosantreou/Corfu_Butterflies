@@ -12,8 +12,8 @@
 - 🔎 **Smart Search**: Use natural language (e.g. _"blue with red dots"_) to find butterflies.
 - 🎨 **Visual Filters**: Filter butterflies by color, wing pattern, or unique features.
 - 🖼️ **Image Gallery**: Browse butterfly images with details shown as captions.
+- 📷 **Visual Search**: Upload an image to find visually similar butterflies using deep learning.
 - ⚙️ **spaCy-powered NLP**: Extracts and matches relevant keywords from user queries.
-
 ---
 
 ## 📦 Installation
