@@ -2,7 +2,10 @@ import streamlit as st
 
 st.set_page_config(page_title= "Corfu Butterflies Explorer", page_icon="🦋", layout="centered")
 
-st.title("🦋 Welcome to the Corfu Butterflies Explorer")
+st.markdown(
+    """<h1 style='white-space: nowrap;'>🦋 Welcome to the Corfu Butterflies Explorer</h1>""",
+    unsafe_allow_html=True
+)
 st.markdown("""
 This is a web application designed to help you explore and discover the beautiful butterflies of Corfu, Greece. 
 Whether you're a butterfly enthusiast, a nature lover, or just curious about these fascinating creatures, this app
