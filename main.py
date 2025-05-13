@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import spacy
 
-st.set_page_config(page_title="Butterfly Explorer", page_icon="🦋")
+st.set_page_config(page_title="Corfu Butterflies Explorer", page_icon="🦋")
 
 # Load data
 df = pd.read_csv("butterflies.csv")
