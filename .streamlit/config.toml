@@ -1,5 +1,10 @@
 [theme]
-base="dark"
-primaryColor="#29988b"
-backgroundColor="#2e3133"
-secondaryBackgroundColor="#1c1c1c"
+base = "dark"
+primaryColor = "#29988b"
+backgroundColor = "#2e3133"
+secondaryBackgroundColor = "#1c1c1c"
+
+[server]
+headless = true
+enableCORS = false
+enableXsrfProtection = false

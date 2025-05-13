@@ -8,8 +8,13 @@ st.set_page_config(page_title="Corfu Butterflies Explorer", page_icon="🦋")
 df = pd.read_csv("butterflies.csv")
 
 # Load spaCy NLP model
-nlp = spacy.load("en_core_web_sm")
-
+try:
+    nlp = spacy.load("en_core_web_sm")
+except:
+    import subprocess
+    subprocess.run(["python", "-m", "spacy", "download", "en_core_web_sm"])
+    nlp = spacy.load("en_core_web_sm")
+    
 # Extract keywords using spaCy 
 def extract_keywords_with_spacy(query, df):
     doc = nlp(query.lower())
