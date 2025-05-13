@@ -30,7 +30,7 @@ def extract_keywords_with_spacy(query, df):
 
 def main():
     # Streamlit UI
-    st.title("🦋 Butterfly Explorer")
+    st.title("🦋 Corfu Butterflies Explorer")
 
     # Sidebar filters
     st.sidebar.header("Filter butterflies")
