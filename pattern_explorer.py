@@ -12,7 +12,7 @@ try:
     nlp = spacy.load("en_core_web_sm")
 except:
     import subprocess
-    subprocess.run(["python3", "-m", "spacy", "download", "en_core_web_sm"])
+    subprocess.run(["python", "-m", "spacy", "download", "en_core_web_sm"])
     nlp = spacy.load("en_core_web_sm")
     
 # Extract keywords using spaCy 
