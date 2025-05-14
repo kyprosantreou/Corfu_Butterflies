@@ -4,7 +4,6 @@ from PIL import Image
 import open_clip
 import torch.nn.functional as F
 
-
 if torch.cuda.is_available():
     device = "cuda"
 else:
@@ -35,13 +34,10 @@ def visual_search(preselected_image_path=None):
         user_image = Image.open(uploaded_image)
         st.image(user_image, caption="The image you uploaded", use_container_width=True)
 
-    # Compute embedding
     user_image_embedding = get_image_embedding(user_image)
 
-    # Load stored embeddings
     image_embeddings, image_paths = torch.load("butterfly_embeddings.pt")
 
-    # Compute cosine similarity
     similarities = F.cosine_similarity(user_image_embedding, image_embeddings)
 
     top_k = similarities.topk(5)
