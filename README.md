@@ -35,7 +35,7 @@ python -m spacy download en_core_web_sm
 ```
 ### 🧪 Run the App
 ```bash
-streamlit run main.py
+streamlit run main.py --server.fileWatcherType none
 ```
 
 ## 🌍 Data Source & Credits
