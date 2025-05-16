@@ -57,8 +57,10 @@ def pattern_explorer():
 
     # Apply spaCy query filtering
     if search_query:
+        # Extract relevant keywords from the user's search query
         query_keywords = extract_keywords_with_spacy(search_query, df)
         if query_keywords:
+            # Filter the DataFrame by checking if each keyword is present in specified columns
             filtered_df = filtered_df[
                 filtered_df.apply(
                     lambda row: all(
@@ -69,21 +71,25 @@ def pattern_explorer():
                 )
             ]
         else:
+            # Inform the user if no keywords were matched and reset the DataFrame
             st.info("🔎 Your search didn't match any known keywords (colors, patterns or features).")
             filtered_df = pd.DataFrame(columns=df.columns)
 
-    # Display results
+    # Display the number of butterflies found
     st.subheader(f"Found {len(filtered_df)} butterflies")
 
     if filtered_df.empty:
+        # Warn the user if there are no matches
         st.warning("😕 No butterflies match your filters or search query.")
     else:
+        # Use a 3-column layout to present the results
         cols = st.columns(3)
         for i, (_, row) in enumerate(filtered_df.iterrows()):
             with cols[i % 3]:
+                # Show each butterfly image with its color, pattern, and extra features in the caption
                 st.image(row["image"],
-                        caption=f"{row['color']} | {row['pattern']} | {row['extra_features']}",
-                        use_container_width=True)
+                         caption=f"{row['color']} | {row['pattern']} | {row['extra_features']}",
+                         use_container_width=True)
 
 if __name__ == "__main__":
     pattern_explorer()
