@@ -1,6 +1,6 @@
 pandas==2.2.3
-Pillow>=11.0.0
-spacy==3.7.5
+Pillow==10.0.0
+spacy==3.8.5
 streamlit==1.45.1
 torch==2.7.0
 torchvision==0.22.0
